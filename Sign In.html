@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.jpg">
+<script>
+const form = document.getElementById('signin-form');
+const errorMessage = document.getElementById('error-message');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+
+  // Your sign-in validation code here
+  if (email === 'example@example.com' && password === 'password') {
+    // Redirect the user to the homepage on successful sign-in
+    window.location.href = 'homepage.html';
+  } else {
+    errorMessage.textContent = 'Invalid email or password';
+  }
+});
+</script>
+  </head>
+  <body>
+  <header>
+      <h1>Void Songs</h1>
+      <nav>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Discover.html">Discover</a></li>
+          <li><a href="Artists.html">Artists</a></li>
+          <li><a href="Sign In.html">Sign In</a></li>
+          <li><a href="Sign Up.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <form id="signin-form">
+        <h1>Sign In</h1>
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-container">
+          <input type="submit" value="Sign In">
+        </div>
+      </form>
+      <div id="error-message"></div>
+    </div>
+  </body>
+</html>
